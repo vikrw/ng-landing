@@ -3,13 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'chat',
-    loadChildren: () => import('./pages/chat/chat.module').then(m => m.ChatModule)
+    path: '',
+    loadChildren: () =>
+      import('./pages/chat/chat.module').then((m) => m.ChatModule),
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
