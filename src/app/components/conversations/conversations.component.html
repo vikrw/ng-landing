@@ -1,0 +1,37 @@
+<div #chatSelected class="conv__wrapper">
+	<div class="conv__user-details">
+		<div class="d-flex align-items-center">
+			<div>
+				<img [src]="chatData?.userImage" alt="user-image">
+			</div>
+			<div class="conv__user-name-detail">
+				<p>{{chatData?.name}}</p>
+				<p><span class="red">Buyer: Maruti Suzki Swift Dezire</span></p>
+			</div>
+		</div>
+		<div>
+			<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+		</div>
+	</div>
+	<div class="conv__conversation">
+		<div class="conv__chat-text">
+			<div class="conv__chat-image">
+				<img [src]="chatData?.userImage" alt="user-image">
+			</div>
+			<div class="conv__chat-message">
+				<p>Hey, Semi</p>
+				<p>How are you ?</p>
+			</div>
+		</div>
+	</div>
+	<div class="conv__type-area">
+		<div class="conv__chat-input">
+			<i class="fa fa-smile-o" aria-hidden="true"></i>
+			<i class="fa fa-paperclip" aria-hidden="true"></i>
+			<input type="text" placeholder="Write your message">
+		</div>
+		<button class="btn conv__red-button">
+			<i class="fa fa-paper-plane" aria-hidden="true"></i> Send
+		</button>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+:host {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 79vh;
+}
+
+.no-chat {
+  &__wrapper {
+    text-align: center;
+    width: 300px;
+
+    .fa-comments-o {
+      font-size: 70px;
+    }
+  }
+}

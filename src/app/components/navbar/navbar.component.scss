@@ -1,0 +1,12 @@
+@import "../../../theme/variable";
+
+.navbar {
+  &__btn-post-ad {
+    background-color: $red;
+    font-size: 16px;
+    color: $white;
+  }
+  &__user-image {
+    width: 15px;
+  }
+}

@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">auto.market</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      (click)="toggleCollapsed()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"
+      [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <!-- here we can use routerLink and routerLinkActive for every menu items for navigating to the route 
+          and assigning a class when route is active  -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sell Car</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sell Car</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Buy Car</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Market</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <i class="fa fa-car" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <i class="fa fa-bell-o" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img src="../../../assets/images/user.png" class="navbar__user-image" alt="user"> Semi L.
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <button class="btn navbar__btn-post-ad" type="submit">
+            <i class="fa fa-plus"></i> Post ad
+          </button>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

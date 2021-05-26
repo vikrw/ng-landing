@@ -1,0 +1,16 @@
+.chat {
+  &__center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__full-width {
+    display: block;
+  }
+
+  &__conv-area {
+    background: #fff;
+    border-radius: 7px;
+  }
+}

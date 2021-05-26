@@ -1,0 +1,21 @@
+<div class="msg-box__wrapper">
+	<div class="msg-box__search-box">
+		<input type="text" class="form-control" placeholder="Search">
+		<i class="fa fa-search msg-box__search-icon" aria-hidden="true"></i>
+	</div>
+	<div class="msg-box__msgs">
+		<div *ngFor="let msg of msgBoxData" class="msg-box--msg w-100" (click)="goToChat(msg)">
+			<div class="msg-box__user-image">
+				<img [src]="msg?.userImage" alt="user-image">
+			</div>
+			<div class="msg-box__msg-detail">
+				<p class="m-0">{{ msg?.name }}</p>
+				<small>{{ msg?.latestMessage }}</small>
+			</div>
+			<div class="msg-box__msg-time">
+				<p class="msg-box__time">{{ msg?.msgTime }}</p>
+				<div [class.msg-box__msg-numbers]="msg?.msgNumber">{{ msg?.msgNumber }}</div>
+			</div>
+		</div>
+	</div>
+</div>
