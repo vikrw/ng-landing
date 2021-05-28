@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ChatComponent } from './chat.component';
 import { ChatRoutingModule } from './chat-routing.module';
@@ -8,7 +9,7 @@ import { ConversationsComponent } from '../../components/conversations/conversat
 import { NoChatComponent } from '../../components/no-chat/no-chat.component';
 
 @NgModule({
-  imports: [ChatRoutingModule, CommonModule],
+  imports: [ChatRoutingModule, CommonModule, ReactiveFormsModule],
   declarations: [
     ChatComponent,
     MessageBoxComponent,

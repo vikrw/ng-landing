@@ -1,3 +1,5 @@
+@import "../../../theme/variable";
+
 .chat {
   &__center-align {
     display: flex;
@@ -8,9 +10,36 @@
   &__full-width {
     display: block;
   }
-
   &__conv-area {
-    background: #fff;
+    background: $white;
     border-radius: 7px;
+  }
+  &__conv-area-responsive {
+    background: $white;
+    border-radius: 7px;
+    width: 94%;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 10px;
+    height: 82.5vh;
+
+    @media (min-width: 992px) {
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0;
+      height: auto;
+    }
+
+    @media (min-width: 1200px) {
+      width: 100%;
+    }
+  }
+
+  &__user-area-hide {
+    display: none;
+  }
+
+  &__user-area-show {
+    display: block;
   }
 }

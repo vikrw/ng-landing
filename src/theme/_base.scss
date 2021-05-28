@@ -1,5 +1,14 @@
 @import "../theme/variable";
 
+@font-face {
+  font-family: "DejaVuSans Book";
+  src: url("/assets/fonts/DejaVu Sans Book.ttf") format("truetype");
+}
+
+body {
+  font-family: "DejaVuSans Book";
+}
+
 .red {
   color: $red;
 }

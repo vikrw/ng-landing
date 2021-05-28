@@ -1,8 +1,12 @@
 <div #chatSelected class="conv__wrapper">
+	<div class="conv__back-btn" (click)="goToMsgBox()">
+		<i class="fa fa-chevron-left" aria-hidden="true"></i>
+	</div>
 	<div class="conv__user-details">
 		<div class="d-flex align-items-center">
-			<div>
+			<div class="conv__current-user">
 				<img [src]="chatData?.userImage" alt="user-image">
+				<div class="conv__green-dot"></div>
 			</div>
 			<div class="conv__user-name-detail">
 				<p>{{chatData?.name}}</p>
@@ -19,8 +23,13 @@
 				<img [src]="chatData?.userImage" alt="user-image">
 			</div>
 			<div class="conv__chat-message">
-				<p>Hey, Semi</p>
-				<p>How are you ?</p>
+				<p class="conv--message">Hey, Semi</p>
+				<p class="conv--message">How are you ?</p>
+			</div>
+		</div>
+		<div class="conv__sent-msgs">
+			<div class="conv__sent-msg" *ngFor="let msg of msgSent">
+				<p class="conv--message">{{msg}}</p>
 			</div>
 		</div>
 	</div>
@@ -28,9 +37,10 @@
 		<div class="conv__chat-input">
 			<i class="fa fa-smile-o" aria-hidden="true"></i>
 			<i class="fa fa-paperclip" aria-hidden="true"></i>
-			<input type="text" placeholder="Write your message">
+			<input type="text" placeholder="Write your message" [formControl]="msgToSend"
+				(keyup.enter)="sendMessage(msgToSend.value)">
 		</div>
-		<button class="btn conv__red-button">
+		<button class="btn conv__red-button" [disabled]="!msgToSend.value" (click)="sendMessage(msgToSend.value)">
 			<i class="fa fa-paper-plane" aria-hidden="true"></i> Send
 		</button>
 	</div>

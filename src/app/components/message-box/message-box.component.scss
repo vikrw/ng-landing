@@ -3,12 +3,23 @@
 .msg-box {
   &__search-box {
     position: relative;
+
+    input {
+      background-color: $body-bg;
+      color: #000;
+
+      &::placeholder {
+        color: #000;
+      }
+    }
   }
 
   &__search-icon {
     position: absolute;
-    top: 10px;
+    top: 8px;
     right: 10px;
+    color: $search-icon;
+    font-size: 20px;
   }
 
   &__wrapper {
@@ -20,21 +31,36 @@
   }
 
   &__user-image {
-    width: 15%;
+    width: 18%;
+
+    @media (min-width: 480px) {
+      width: 1%;
+    }
+    @media (min-width: 992px) {
+      width: 18%;
+    }
     img {
       width: 30px;
     }
   }
 
   &__msg-detail {
-    width: 70%;
+    width: 67%;
+    @media (min-width: 480px) {
+      width: 62%;
+    }
+    @media (min-width: 992px) {
+      width: 67%;
+    }
     p {
+      font-weight: 500;
       line-height: 15px;
+      font-size: 15px;
     }
   }
 
   &__msg-time {
-    width: 15%;
+    width: 24%;
     p {
       margin: 0;
       font-size: 13px;
@@ -51,10 +77,10 @@
   }
 
   &__msg-numbers {
-    font-size: 13px;
-    height: 30px;
-    width: 30px;
-    background-color: red;
+    font-size: 11px;
+    height: 27px;
+    width: 27px;
+    background-color: $red;
     color: $white;
     border-radius: 50%;
     display: flex;

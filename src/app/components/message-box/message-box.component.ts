@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 
 import { ChatService } from '../../services/chat.service';
 import { Message } from '../../models/message.model';
@@ -8,15 +8,22 @@ import { Message } from '../../models/message.model';
   templateUrl: './message-box.component.html',
   styleUrls: ['./message-box.component.scss'],
 })
-export class MessageBoxComponent implements OnInit {
+export class MessageBoxComponent {
   @Input() msgBoxData: Message[] = [];
+  innerWidth: number = window.innerWidth;
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = event.target.innerWidth;
+  }
   constructor(private chatService: ChatService) {}
 
-  ngOnInit(): void {}
-
   goToChat(msg: Message) {
-    console.log({ msg });
+    if (this.innerWidth < 992) {
+      console.log('responsive call');
+      this.chatService.updateSelectedChat(msg);
+      return this.chatService.updateToggleChat(true);
+    }
     return this.chatService.updateSelectedChat(msg);
   }
 }

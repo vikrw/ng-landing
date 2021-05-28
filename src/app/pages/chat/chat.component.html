@@ -1,10 +1,11 @@
 <div class="container">
 	<h2 class="my-2">Chat</h2>
 	<div class="row chat__wrapper">
-		<div class="col-md-12 col-lg-3">
+		<div class="col-md-12 col-lg-3 chat__user-area"
+			[ngClass]="{'chat__user-area-hide': responsiveChatStatus, 'chat__user-area-show': !responsiveChatStatus }">
 			<app-message-box [msgBoxData]="msgBoxData"></app-message-box>
 		</div>
-		<div class="col-md-12 col-lg-9 chat__conv-area">
+		<div class="col-md-12 col-lg-9 chat__conv-area" *ngIf="!responsiveChatStatus && innerWidth > 992">
 			<ng-template [ngIf]="!chatSelectionStatus" [ngIfElse]="chatSelected">
 				<app-no-chat></app-no-chat>
 			</ng-template>
@@ -12,6 +13,11 @@
 				<app-conversations [chatSelectionStatus]="chatSelectionStatus" [chatData]="chatData">
 				</app-conversations>
 			</ng-template>
+		</div>
+		<div class="col-md-12 col-lg-9 chat__conv-area chat__conv-area-responsive"
+			*ngIf="responsiveChatStatus && innerWidth < 992">
+			<app-conversations [chatSelectionStatus]="chatSelectionStatus" [chatData]="chatData">
+			</app-conversations>
 		</div>
 	</div>
 </div>
